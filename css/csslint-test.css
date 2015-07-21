@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+@import "code-guardian.css";
+
+* {
+	color: #000;
+}
+
+html {
+	*background-color: white; /* test */
+	_background-color: white;
+}
+
+body {
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: white;
+}
+
+a[href*='google.com'] {
+	color: green;
+}
+
+html body .test.test_block #id {
+	margin: 0px 0em;
+}
+
+#id {
+	outline: none;
+}
+
+/*warnings*/
+
+p#id-2 {
+	unknown-property: 0;
+}
+
+.float-1 {
+	float: left;
+}
+
+.float-2 {
+	float: left;
+}
+
+.float-3 {
+	float: left;
+}
+
+.float-4 {
+	float: left;
+}
+
+.float-5 {
+	float: left;
+}
+
+.float-6 {
+	float: left;
+}
+
+.float-7 {
+	float: left;
+}
+
+.float-8 {
+	float: left;
+}
+
+.float-9 {
+	float: left;
+}
+
+.float-10 {
+	float: left;
+}
+
+.float-11 {
+	float: left;
+}

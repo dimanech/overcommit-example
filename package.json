@@ -1,0 +1,8 @@
+{
+	"name": "tb2-rebranding",
+	"version": "0.0.1",
+	"main": "Gruntfile.js",
+	"devDependencies": {
+		"grunt-contrib-csslint": "~0.2.0"
+	}
+}

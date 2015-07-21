@@ -1,0 +1,46 @@
+# Avoid to commit any binar data
+*.psd
+*.zip
+*.7zip
+*.tar
+*.rar
+
+*.diff
+*.err
+*.orig
+*.rej
+*.swo
+*.swp
+*.sass-cache
+*.vi
+*~
+*.gem
+*.rbc
+
+.DS_Store
+._*
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+.idea
+.project
+.pydevproject
+.externalToolBuilders
+.settings
+RemoteSystemsTempFiles
+.metadata
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# Logs
+logs
+*.log
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Project specific
+css/**/*.css
+css/**/*.css.map
