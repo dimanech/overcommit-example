@@ -2,10 +2,12 @@
 
 module.exports = function(grunt) {
 
+	var cartridgePath = "./cartridges/tb2_app_storefront/cartridge/static/default/";
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		// File watchers
+		// file watchers
 
 		sass: {
 			options: {
@@ -14,14 +16,15 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'./css/code-guardian.css': './css/code-guardian.scss'
+					'./cartridges/tb2_app_storefront/cartridge/static/default/css/styles.css': cartridgePath + '/sass/styles.scss',
+					'./cartridges/tb2_app_storefront/cartridge/static/default/css/scsslint-test.css': cartridgePath + '/sass/scsslint-test.scss'
 				}
 			}
 		},
 
 		watch: {
 			sassWatch: {
-				files: ['./css/**/*.scss'],
+				files: [cartridgePath + 'sass/**/*.scss'],
 				tasks: ['sass']
 			}
 		},
@@ -31,10 +34,22 @@ module.exports = function(grunt) {
 
 		spriteGeneric: {
 			global : {
-				src: './images/global-sprite/*.png',
-				dest: './images/global-sprite.png',
-				destCss: './sass/lib/_sprite.scss',
+				src: cartridgePath + 'images/global-sprite/*.png',
+				dest: cartridgePath + 'images/global-sprite.png',
+				destCss: cartridgePath + 'sass/lib/_sprite.scss',
 				padding: 20
+			}
+		},
+
+		// css comb
+		// please use it manually by exec 'grunt csscomb' command
+
+		csscomb: {
+			dynamic_mappings: {
+				expand: true,
+				cwd: cartridgePath + '/sass/',
+				src: ['**/*.scss'],
+				dest: cartridgePath + '/sass/'
 			}
 		}
 	});
@@ -43,6 +58,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.loadNpmTasks('grunt-spritesmith');
+
+	grunt.loadNpmTasks('grunt-csscomb');
 
 	grunt.registerTask('default', ['watch']);
 

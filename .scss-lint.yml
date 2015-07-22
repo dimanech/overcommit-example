@@ -1,5 +1,12 @@
 # Default application configuration that all configurations inherit from.
 linters:
+  BangFormat:
+    space_before_bang: true
+    space_after_bang: false
+
+  BemDepth:
+    max_elements: 3
+
   BorderZero:
     enabled: false
 
@@ -58,8 +65,8 @@ linters:
   Indentation:
     enabled: true
     severity: error
-    character: tab # or 'tab'
-    width: 1
+    character: 'spaces' # or 'tab'
+    width: 2
 
   LeadingZero:
     enabled: true
