@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// css comb
+		// css comb. Need for build
 		// please use it manually by exec 'grunt csscomb' command
 
 		csscomb: {

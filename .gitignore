@@ -42,5 +42,4 @@ logs
 .grunt
 
 # Project specific
-css/**/*.css
-css/**/*.css.map
+css

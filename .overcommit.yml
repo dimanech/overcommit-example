@@ -30,7 +30,7 @@ CommitMsg:
 
 PreCommit:
   ALL:
-    problem_on_unmodified_line: warn #report, warn, ignore
+    problem_on_unmodified_line: ignore #report, warn, ignore
     requires_files: true
     required: false
     quiet: false
