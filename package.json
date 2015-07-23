@@ -10,7 +10,8 @@
     "grunt-csscomb": "~3.0.1",
     "grunt-sass": "~1.0.0",
     "grunt-scsslint": "~0.1.0",
-    "grunt-spritesmith": "~4.7.1"
+    "grunt-spritesmith": "~4.7.1",
+	  "grunt-newer": "~1.1.1"
   },
   "devDependencies": {},
   "repository": {

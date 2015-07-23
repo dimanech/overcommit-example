@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 		sass: {
 			options: {
 				sourceMap: true,
-				outputStyle: 'expanded'
+				outputStyle: 'nested'
 			},
 			dist: {
 				files: {
@@ -22,10 +22,26 @@ module.exports = function(grunt) {
 			}
 		},
 
+		csscombProd: {
+			options: {
+				config: './.csscomb-prod.json'
+			},
+			dynamic_mappings: {
+				expand: true,
+				cwd: cartridgePath + '/css/',
+				src: ['*.css'],
+				dest: cartridgePath + '/css/'
+			}
+		},
+
 		watch: {
 			sassWatch: {
 				files: [cartridgePath + 'sass/**/*.scss'],
-				tasks: ['sass']
+				tasks: ['newer:sass']
+			},
+			combWatch: {
+				files: [cartridgePath + 'css/*.css'],
+				tasks: ['newer:csscombProd']
 			}
 		},
 
@@ -39,27 +55,14 @@ module.exports = function(grunt) {
 				destCss: cartridgePath + 'sass/lib/_sprite.scss',
 				padding: 20
 			}
-		},
-
-		// css comb. Need for build
-		// please use it manually by exec 'grunt csscomb' command
-
-		csscomb: {
-			dynamic_mappings: {
-				expand: true,
-				cwd: cartridgePath + '/sass/',
-				src: ['**/*.scss'],
-				dest: cartridgePath + '/sass/'
-			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-
-	grunt.loadNpmTasks('grunt-spritesmith');
-
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-csscomb');
+	grunt.loadNpmTasks('grunt-spritesmith');
 
 	grunt.registerTask('default', ['watch']);
 
